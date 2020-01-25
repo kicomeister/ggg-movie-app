@@ -1,8 +1,10 @@
-# Front-end boilerplate
+# GGG Movie Library
+
+Movie library based on [themoviedb](https://www.themoviedb.org/) with React, Typescript, MobX.
 
 ## Requeriments
 
-1. [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/)
 
 ## Install
 
