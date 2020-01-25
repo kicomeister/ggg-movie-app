@@ -18,10 +18,12 @@ export default class AsyncStore<T> {
   }
 
   @action.bound
-  protected startFetching() {
+  protected startFetching(resetData: Boolean = true) {
     this.isFetching = true;
     this.error = null;
-    this.data = null;
+    if (resetData) {
+      this.data = null;
+    }
   }
 
   @action.bound
@@ -31,8 +33,10 @@ export default class AsyncStore<T> {
   }
 
   @action.bound
-  protected handleSuccess(results: T) {
-    this.data = results;
+  protected handleSuccess(results: T, saveResults: Boolean = true) {
+    if (saveResults) {
+      this.data = results;
+    }
     this.isFetching = false;
     this.error = null;
   }
