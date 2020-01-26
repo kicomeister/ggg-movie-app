@@ -1,5 +1,7 @@
 :root {
   --main-bg-color: #101010;
+  --main-text-color: white;
+  --main-action-color: #ff5209;
 }
 
 body {

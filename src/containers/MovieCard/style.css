@@ -1,0 +1,44 @@
+.MovieCard {
+  margin: 30px 30px 0 0;
+  width: 210px;
+  height: 322.5px;
+  background-color: #050404;
+  overflow: hidden;
+  position: relative;
+}
+
+.MovieCard__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.MovieCard__buttons,
+.MovieCard__title {
+  position: absolute;
+  padding: 10px;
+  transition: transform 350ms ease-in-out;
+  color: white;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.MovieCard__title {
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+.MovieCard__buttons {
+  top: 0;
+  transform: translateY(-100%);
+  text-align: right;
+}
+
+.MovieCard:hover > div {
+  transform: translateY(0%);
+}
+
+.MovieCard__icon--selected {
+  color: var(--main-action-color);
+}
