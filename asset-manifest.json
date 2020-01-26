@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/ggg-movie-app/static/css/main.d083e0a9.chunk.css",
+    "main.css": "/ggg-movie-app/static/css/main.3da89ddf.chunk.css",
     "main.js": "/ggg-movie-app/static/js/main.6e2ad8b9.chunk.js",
     "runtime-main.js": "/ggg-movie-app/static/js/runtime-main.49f3454c.js",
     "static/js/2.dcc7bf49.chunk.js": "/ggg-movie-app/static/js/2.dcc7bf49.chunk.js",
     "index.html": "/ggg-movie-app/index.html",
-    "precache-manifest.0fa170db34bcf794964c1d4eb0233171.js": "/ggg-movie-app/precache-manifest.0fa170db34bcf794964c1d4eb0233171.js",
+    "precache-manifest.ddab2152600ba76c02288d01ef8d6332.js": "/ggg-movie-app/precache-manifest.ddab2152600ba76c02288d01ef8d6332.js",
     "service-worker.js": "/ggg-movie-app/service-worker.js",
     "static/js/2.dcc7bf49.chunk.js.LICENSE": "/ggg-movie-app/static/js/2.dcc7bf49.chunk.js.LICENSE",
     "static/media/spinner.7b7c83ca.svg": "/ggg-movie-app/static/media/spinner.7b7c83ca.svg"
@@ -13,7 +13,7 @@
   "entrypoints": [
     "static/js/runtime-main.49f3454c.js",
     "static/js/2.dcc7bf49.chunk.js",
-    "static/css/main.d083e0a9.chunk.css",
+    "static/css/main.3da89ddf.chunk.css",
     "static/js/main.6e2ad8b9.chunk.js"
   ]
 }
