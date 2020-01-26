@@ -7,6 +7,7 @@ import { Nullable } from "../../util";
 
 import "./style.css";
 import Heading from "../../components/Heading";
+import Loader from "../../components/Loader";
 
 export interface IProps {
   onChange: (value: string) => void;
@@ -22,7 +23,11 @@ const SearchView = ({ onChange, value, isFetching, results }: IProps) => (
     </div>
     <div className="Search__results">
       <div className="Search__heading-container">{isFetching || results !== null ? <Heading>Search results</Heading> : null}</div>
-      {isFetching ? <div>loading...</div> : null}
+      {isFetching ? (
+        <div>
+          <Loader />
+        </div>
+      ) : null}
       {results ? results.map(movie => <MovieCard key={movie.id} movie={movie} />) : null}
     </div>
   </div>
