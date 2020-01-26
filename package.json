@@ -3,6 +3,7 @@
   "description": "Movie library",
   "version": "0.0.1",
   "private": true,
+  "homepage": "http://kicomeister.github.io/ggg-movie-app",
   "dependencies": {
     "@iconify/icons-jam": "^1.0.3",
     "@iconify/react": "^1.1.1",
@@ -38,6 +39,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.3",
     "fetch-mock": "^7.7.3",
+    "gh-pages": "^2.2.0",
     "node-fetch": "^2.6.0",
     "npm-run-all": "^4.1.5",
     "prettier": "1.18.2",
@@ -62,6 +64,8 @@
     "typecheck": "tsc --project tsconfig.json",
     "lint": "tslint -p . -c tslint.json",
     "lint:fix": "tslint --fix -p . -c tslint.json",
-    "stage-files": "git add ."
+    "stage-files": "git add .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
