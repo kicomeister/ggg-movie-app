@@ -1,0 +1,30 @@
+.Filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Filter__title {
+  margin: 0 var(--base-space) var(--base-space) 0;
+  color: white;
+}
+
+.Filter__button {
+  padding: calc(var(--base-space) / 2) var(--base-space);
+  border-radius: 15px;
+  margin: 0 var(--base-space) var(--base-space) 0;
+  min-width: 50px;
+  border: 0;
+  cursor: pointer;
+}
+
+.Filter__button:focus {
+  outline: 0;
+}
+
+.Filter__button:hover,
+.Filter__button--active {
+  background-color: var(--main-action-color);
+  color: white;
+}

@@ -1,20 +1,26 @@
-import { observable, action } from "mobx";
+import { observable, computed } from "mobx";
+import uniq from "lodash/uniq";
 
 import AsyncStore from "./AsyncStore";
 import RootStore from "./RootStore";
 import { IMovie } from "../models/Movie";
 import ApiService from "../services/api";
 import { Nullable } from "../util";
+import { IGenres } from "../models/Genres";
+import FilterStore from "./FilterStore";
 
 export default class SearchStore extends AsyncStore<IMovie[]> {
   private apiService: ApiService;
 
+  private filterStore: FilterStore;
+
   @observable
-  freshMovies: Nullable<IMovie[]> = null;
+  public categories: IGenres = {};
 
   constructor(rootStore: RootStore, apiService: ApiService) {
     super(rootStore);
     this.apiService = apiService;
+    this.filterStore = rootStore.filter;
   }
 
   public async searchFor(query: string) {
@@ -28,6 +34,28 @@ export default class SearchStore extends AsyncStore<IMovie[]> {
     }
   }
 
-  @action.bound
-  public async getFreshMovies(date: Date) {}
+  @computed
+  get filteredSearchResults(): Nullable<IMovie[]> {
+    if (this.filterStore.filters.length && this.data) {
+      return this.data.filter(movie => movie.genre_ids && movie.genre_ids.filter(genre => this.filterStore.filters.includes(genre)).length);
+    }
+
+    return this.data;
+  }
+
+  @computed
+  get resultsGenreIds(): number[] {
+    if (this.data) {
+      const genresIds = this.data.reduce((acc: number[], movie) => {
+        if (movie.genre_ids) {
+          return [...acc, ...movie.genre_ids];
+        }
+
+        return acc;
+      }, []);
+      return uniq(genresIds);
+    }
+
+    return [];
+  }
 }

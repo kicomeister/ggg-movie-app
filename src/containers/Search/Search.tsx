@@ -17,7 +17,7 @@ const Search = () => {
     },
     [updateValue, search],
   );
-  return <SearchView onChange={handleChange} value={value} results={store.search.data} isFetching={store.search.isFetching} />;
+  return <SearchView onChange={handleChange} value={value} results={store.search.filteredSearchResults} isFetching={store.search.isFetching} />;
 };
 
 export default observer(Search);

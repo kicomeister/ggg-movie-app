@@ -7,7 +7,8 @@ const App = () => {
   const store = useStore();
   useEffect(() => {
     store.app.configure();
-  }, [store.app]);
+    store.genres.getGenres();
+  }, [store.app, store.genres]);
   return <Router />;
 };
 
