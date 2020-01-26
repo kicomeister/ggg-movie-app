@@ -2,7 +2,7 @@
 
 Movie library based on [themoviedb](https://www.themoviedb.org/) with React, Typescript, MobX.
 
-Check the [DEMO][https://kicomeister.github.io/ggg-movie-app/]
+Check the [DEMO](https://kicomeister.github.io/ggg-movie-app/)
 
 ## Requeriments
 
