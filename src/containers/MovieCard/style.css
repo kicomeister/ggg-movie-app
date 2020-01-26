@@ -42,3 +42,16 @@
 .MovieCard__icon--selected {
   color: var(--main-action-color);
 }
+
+@media all and (max-width: 550px) {
+  .MovieCard {
+    width: 100%;
+    margin-right: 0;
+    height: 50vh;
+  }
+
+  .MovieCard__buttons,
+  .MovieCard__title {
+    transform: translateY(0%);
+  }
+}
