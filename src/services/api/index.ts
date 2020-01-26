@@ -70,4 +70,37 @@ export default class ApiService {
       throw Error("Failed to fetch movie");
     }
   }
+
+  // https://developers.themoviedb.org/3/discover/movie-discover
+  async getFreshMovies(date: Date = new Date(), page: number = 1): Promise<ISearchResult> {
+    try {
+      const month = (date.getMonth() + 1).toString().padStart(2, "0");
+      const day = date
+        .getDate()
+        .toString()
+        .padStart(2, "0");
+      const toDate = new Date(date);
+      toDate.setDate(toDate.getDate() + 7);
+      const toDay = toDate
+        .getDate()
+        .toString()
+        .padStart(2, "0");
+      const toMonth = (toDate.getMonth() + 1).toString().padStart(2, "0");
+
+      const response = await fetch(
+        `${ApiService.BASE_URL}/discover/movie?api_key=${
+          ApiService.API_KEY
+        }&primary_release_date.gte=${date.getFullYear()}-${month}-${day}&primary_release_date.lte=${toDate.getFullYear()}-${toMonth}-${toDay}&page=${page}`,
+      );
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw Error(result.status_message);
+      }
+      return result;
+    } catch (e) {
+      console.error(e);
+      throw Error("Failed to fetch fresh movies");
+    }
+  }
 }

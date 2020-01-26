@@ -1,4 +1,4 @@
-import { observable, computed } from "mobx";
+import { computed } from "mobx";
 import uniq from "lodash/uniq";
 
 import AsyncStore from "./AsyncStore";
@@ -6,16 +6,12 @@ import RootStore from "./RootStore";
 import { IMovie } from "../models/Movie";
 import ApiService from "../services/api";
 import { Nullable } from "../util";
-import { IGenres } from "../models/Genres";
 import FilterStore from "./FilterStore";
 
 export default class SearchStore extends AsyncStore<IMovie[]> {
   private apiService: ApiService;
 
   private filterStore: FilterStore;
-
-  @observable
-  public categories: IGenres = {};
 
   constructor(rootStore: RootStore, apiService: ApiService) {
     super(rootStore);

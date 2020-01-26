@@ -8,7 +8,8 @@ const App = () => {
   useEffect(() => {
     store.app.configure();
     store.genres.getGenres();
-  }, [store.app, store.genres]);
+    store.movies.getFreshMovies();
+  }, [store.app, store.genres, store.movies]);
   return <Router />;
 };
 

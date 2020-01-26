@@ -1,0 +1,9 @@
+.Movielist {
+  padding: 30px;
+}
+
+.Movielist__results {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}

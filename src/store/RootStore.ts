@@ -6,6 +6,7 @@ import MyMoviesStore from "./MyMoviesStore";
 import MovieStore from "./MovieStore";
 import GenresStore from "./GenresStore";
 import FilterStore from "./FilterStore";
+import MoviesStore from "./MoviesStore";
 
 export default class RootStore {
   @observable
@@ -15,6 +16,7 @@ export default class RootStore {
   private movieStore: MovieStore;
   private genresStore: GenresStore;
   private filterStore: FilterStore;
+  private moviesStore: MoviesStore;
 
   constructor(apiService: ApiService) {
     this.appStore = new AppStore(this, apiService);
@@ -23,6 +25,7 @@ export default class RootStore {
     this.genresStore = new GenresStore(this, apiService);
     this.filterStore = new FilterStore(this);
     this.searchStore = new SearchStore(this, apiService);
+    this.moviesStore = new MoviesStore(this, apiService);
   }
 
   get app() {
@@ -47,5 +50,9 @@ export default class RootStore {
 
   get filter() {
     return this.filterStore;
+  }
+
+  get movies() {
+    return this.moviesStore;
   }
 }
