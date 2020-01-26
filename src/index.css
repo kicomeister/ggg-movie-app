@@ -2,6 +2,7 @@
   --main-bg-color: #101010;
   --main-text-color: white;
   --main-action-color: #ff5209;
+  --base-space: 10px;
 }
 
 body {
@@ -15,4 +16,8 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.font-bold {
+  font-weight: 700;
 }

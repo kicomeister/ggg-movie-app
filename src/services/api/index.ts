@@ -1,5 +1,6 @@
 import { IConfigureResult } from "../../models/ConfigureResult";
 import { ISearchResult } from "../../models/SearchResult";
+import { IMovie } from "../../models/Movie";
 
 export default class ApiService {
   private static BASE_URL = process.env.REACT_APP_API_URL;
@@ -34,6 +35,22 @@ export default class ApiService {
     } catch (e) {
       console.error(e);
       throw Error("Failed to fetch search results");
+    }
+  }
+
+  // https://developers.themoviedb.org/3/movies/get-movie-details
+  async movie(id: string): Promise<IMovie> {
+    try {
+      const response = await fetch(`${ApiService.BASE_URL}/movie/${id}?api_key=${ApiService.API_KEY}`);
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw Error(result.status_message);
+      }
+      return result;
+    } catch (e) {
+      console.error(e);
+      throw Error("Failed to fetch movie");
     }
   }
 }
