@@ -10,8 +10,8 @@ import { Player } from "../../components";
 
 import "./style.css";
 
-// const STREAM = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-const STREAM = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8";
+const STREAM = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+// const STREAM = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8";
 
 interface IRouteParams {
   id: string;

@@ -3,7 +3,7 @@
   "description": "Movie library",
   "version": "0.0.1",
   "private": true,
-  "homepage": "http://kicomeister.github.io/ggg-movie-app",
+  "homepage": "https://kicomeister.github.io/ggg-movie-app/",
   "dependencies": {
     "@iconify/icons-jam": "^1.0.3",
     "@iconify/react": "^1.1.1",

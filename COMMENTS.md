@@ -9,3 +9,4 @@ Separated stores by logics blocks.
 - use styled-components with theme provider
 - category pages
 - pagination
+- refact \*View files
