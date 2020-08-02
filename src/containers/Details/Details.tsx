@@ -10,8 +10,8 @@ export interface IProps {
 
 const Details = ({ asset }: IProps) => {
   const store = useStore();
-  const backgroundImageUrl = asset.backdrop_path ? store.app.getImageUrl(asset.backdrop_path) : null;
-  return <DetailsView asset={asset} backgroundImageUrl={backgroundImageUrl} />;
+  const imgUrl = asset.poster_path ? store.app.getImageUrl(asset.poster_path) : null;
+  return <DetailsView asset={asset} imgUrl={imgUrl} />;
 };
 
 export default observer(Details);

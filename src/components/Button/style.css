@@ -1,0 +1,12 @@
+.Button {
+  background-color: var(--main-action-color);
+  border-radius: 5px;
+  color: var(--main-text-color);
+  display: inline-block;
+  font-size: 15px;
+  margin: var(--base-space) 0;
+  padding: var(--base-space);
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5em;
+}

@@ -7,20 +7,20 @@ import { useStore } from "../../store";
 
 interface IRouteParams {
   id: string;
-  seriesId: string;
+  assetType: string;
 }
 
 const Asset = ({ match }: RouteComponentProps<IRouteParams>) => {
   const store = useStore();
 
   useEffect(() => {
-    const { id, seriesId } = match.params;
-    if (seriesId) {
-      store.asset.fetchSeries(seriesId);
+    const { id, assetType } = match.params;
+    if (assetType === "series") {
+      store.asset.fetchSeries(id);
     } else {
       store.asset.fetchMovie(id);
     }
-  }, [match.params.id, store.asset]);
+  }, [match.params, store.asset]);
 
   return <AssetView asset={store.asset.data} isLoading={store.asset.isFetching} />;
 };

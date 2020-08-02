@@ -1,23 +1,24 @@
 import React from "react";
 
 import { IAsset } from "../../models/Asset";
-import { IGenres } from "../../models/Genres";
 import { Nullable, formatDate } from "../../util";
 
 import "./style.css";
+import { LinkButton } from "../../components";
 
 export interface IProps {
   asset: IAsset;
-  backgroundImageUrl: Nullable<string>;
+  imgUrl: Nullable<string>;
 }
 
-const DetailsView = ({ asset, backgroundImageUrl }: IProps) => (
-  <div className="Details" style={{ backgroundImage: backgroundImageUrl ? `url(${backgroundImageUrl})` : undefined }}>
+const DetailsView = ({ asset, imgUrl }: IProps) => (
+  <div className="Details">
     <div className="Details__overlay">
       <div className="Details__details-container">
         {asset ? (
           <>
             <h1 className="Details__title">{asset.title}</h1>
+            <p>{asset.overview}</p>
             <div className="Details__meta">
               <span className="Details__meta-item">{formatDate(new Date(asset.release_date))}</span>
             </div>
@@ -29,10 +30,15 @@ const DetailsView = ({ asset, backgroundImageUrl }: IProps) => (
                 </div>
               )}
             </div>
-            <p>{asset.overview}</p>
+            <LinkButton to={`/player/${asset.isSeries ? "series" : "movie"}/${asset.id}`} caption="Play asset" />
           </>
         ) : null}
       </div>
+      {imgUrl && (
+        <div className="Details__image-container">
+          <img className="Details__image" src={imgUrl} alt="" />
+        </div>
+      )}
     </div>
   </div>
 );

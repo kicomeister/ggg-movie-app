@@ -1,28 +1,27 @@
 .Details {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   position: relative;
 }
 
 .Details__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(0deg, black, transparent);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+.Details__overlay > * {
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 .Details__details-container {
   color: lightgrey;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 30px;
+  justify-content: center;
   flex: 1;
 }
 
@@ -44,4 +43,23 @@
 
 .Details__secondary {
   font-size: 0.7em;
+}
+
+.Details__image-container {
+  margin-left: 30px;
+}
+
+.Details__image {
+  max-width: 100%;
+}
+
+@media all and (max-width: 550px) {
+  .Details__overlay {
+    flex-direction: column;
+  }
+
+  .Details__image-container {
+    margin-left: 0;
+    margin-top: 30px;
+  }
 }
