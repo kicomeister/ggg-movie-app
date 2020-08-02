@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6ee193ab096ae66470ac1c2041410d77",
+    "revision": "282b0e0e9fbcef78f56984e043184fa9",
     "url": "/ggg-movie-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ggg-movie-app/static/css/2.13749543.chunk.css"
   },
   {
-    "revision": "74254a8cb78ee72bfb5b",
+    "revision": "ca6cfb9cef79415f91f2",
     "url": "/ggg-movie-app/static/css/main.4b737479.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ggg-movie-app/static/js/2.52fc1834.chunk.js.LICENSE"
   },
   {
-    "revision": "74254a8cb78ee72bfb5b",
-    "url": "/ggg-movie-app/static/js/main.585c7c9f.chunk.js"
+    "revision": "ca6cfb9cef79415f91f2",
+    "url": "/ggg-movie-app/static/js/main.2b166278.chunk.js"
   },
   {
     "revision": "e5254f83fb558a20292f",
