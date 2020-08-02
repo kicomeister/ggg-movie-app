@@ -1,4 +1,4 @@
-.MovieDetails {
+.Details {
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.MovieDetails__overlay {
+.Details__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.MovieDetails__details-container {
+.Details__details-container {
   color: lightgrey;
   display: flex;
   flex-direction: column;
@@ -26,22 +26,22 @@
   flex: 1;
 }
 
-.MovieDetails__title {
+.Details__title {
   color: var(--main-action-color);
   font-size: 3em;
   margin: 0 0 var(--base-space) 0;
 }
 
-.MovieDetails__meta {
+.Details__meta {
   display: flex;
   font-size: 2em;
   align-items: baseline;
 }
 
-.MovieDetails__meta-item {
+.Details__meta-item {
   margin: 0 var(--base-space) var(--base-space) 0;
 }
 
-.MovieDetails__secondary {
+.Details__secondary {
   font-size: 0.7em;
 }

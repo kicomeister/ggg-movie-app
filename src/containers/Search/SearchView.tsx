@@ -1,7 +1,7 @@
 import React from "react";
 import SearchInput from "./SearchInput";
 import MovieCard from "../MovieCard";
-import { IMovie } from "../../models/Movie";
+import { IAsset } from "../../models/Asset";
 import { Nullable } from "../../util";
 
 import "./style.css";
@@ -13,7 +13,7 @@ export interface IProps {
   onChange: (value: string) => void;
   value: string;
   isFetching: boolean;
-  results: Nullable<IMovie[]>;
+  results: Nullable<IAsset[]>;
 }
 
 const SearchView = ({ onChange, value, isFetching, results }: IProps) => (
@@ -29,7 +29,7 @@ const SearchView = ({ onChange, value, isFetching, results }: IProps) => (
           <Loader />
         </div>
       ) : null}
-      {results ? results.map(movie => <MovieCard key={movie.id} movie={movie} />) : null}
+      {results ? results.map(movie => <MovieCard key={movie.id} asset={movie} />) : null}
     </div>
   </div>
 );

@@ -3,7 +3,7 @@ import ApiService from "../services/api";
 import AppStore from "./AppStore";
 import SearchStore from "./SearchStore";
 import MyMoviesStore from "./MyMoviesStore";
-import MovieStore from "./MovieStore";
+import AssetStore from "./AssetStore";
 import GenresStore from "./GenresStore";
 import FilterStore from "./FilterStore";
 import MoviesStore from "./MoviesStore";
@@ -13,7 +13,7 @@ export default class RootStore {
   private appStore: AppStore;
   private searchStore: SearchStore;
   private myMoviesStore: MyMoviesStore;
-  private movieStore: MovieStore;
+  private assetStore: AssetStore;
   private genresStore: GenresStore;
   private filterStore: FilterStore;
   private moviesStore: MoviesStore;
@@ -21,7 +21,7 @@ export default class RootStore {
   constructor(apiService: ApiService) {
     this.appStore = new AppStore(this, apiService);
     this.myMoviesStore = new MyMoviesStore(this);
-    this.movieStore = new MovieStore(this, apiService);
+    this.assetStore = new AssetStore(this, apiService);
     this.genresStore = new GenresStore(this, apiService);
     this.filterStore = new FilterStore(this);
     this.searchStore = new SearchStore(this, apiService);
@@ -40,8 +40,8 @@ export default class RootStore {
     return this.myMoviesStore;
   }
 
-  get movie() {
-    return this.movieStore;
+  get asset() {
+    return this.assetStore;
   }
 
   get genres() {

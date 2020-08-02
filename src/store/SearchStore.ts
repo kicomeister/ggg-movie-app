@@ -3,12 +3,12 @@ import uniq from "lodash/uniq";
 
 import AsyncStore from "./AsyncStore";
 import RootStore from "./RootStore";
-import { IMovie } from "../models/Movie";
+import { IAsset } from "../models/Asset";
 import ApiService from "../services/api";
 import { Nullable } from "../util";
 import FilterStore from "./FilterStore";
 
-export default class SearchStore extends AsyncStore<IMovie[]> {
+export default class SearchStore extends AsyncStore<IAsset[]> {
   private apiService: ApiService;
 
   private filterStore: FilterStore;
@@ -31,7 +31,7 @@ export default class SearchStore extends AsyncStore<IMovie[]> {
   }
 
   @computed
-  get filteredSearchResults(): Nullable<IMovie[]> {
+  get filteredSearchResults(): Nullable<IAsset[]> {
     if (this.filterStore.filters.length && this.data) {
       return this.data.filter(movie => movie.genre_ids && movie.genre_ids.filter(genre => this.filterStore.filters.includes(genre)).length);
     }

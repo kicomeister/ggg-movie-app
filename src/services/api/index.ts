@@ -1,6 +1,6 @@
 import { IConfigureResult } from "../../models/ConfigureResult";
 import { ISearchResult } from "../../models/SearchResult";
-import { IMovie } from "../../models/Movie";
+import { IAsset, Asset } from "../../models/Asset";
 import { IGenre } from "../../models/Genre";
 
 export default class ApiService {
@@ -40,7 +40,7 @@ export default class ApiService {
   }
 
   // https://developers.themoviedb.org/3/movies/get-movie-details
-  async movie(id: string): Promise<IMovie> {
+  async movie(id: string): Promise<IAsset> {
     try {
       const response = await fetch(`${ApiService.BASE_URL}/movie/${id}?api_key=${ApiService.API_KEY}`);
       const result = await response.json();
@@ -48,10 +48,25 @@ export default class ApiService {
       if (!response.ok) {
         throw Error(result.status_message);
       }
-      return result;
+      return new Asset(result);
     } catch (e) {
       console.error(e);
       throw Error("Failed to fetch movie");
+    }
+  }
+
+  async series(id: string): Promise<IAsset> {
+    try {
+      const response = await fetch(`${ApiService.BASE_URL}/tv/${id}?api_key=${ApiService.API_KEY}`);
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw Error(result.status_message);
+      }
+      return new Asset(result);
+    } catch (e) {
+      console.error(e);
+      throw Error("Failed to fetch series");
     }
   }
 
@@ -101,6 +116,37 @@ export default class ApiService {
     } catch (e) {
       console.error(e);
       throw Error("Failed to fetch fresh movies");
+    }
+  }
+
+  async getPopular(isSeries?: boolean): Promise<ISearchResult> {
+    try {
+      const key = isSeries ? "tv" : "movie";
+      const response = await fetch(`${ApiService.BASE_URL}/discover/${key}?sort_by=popularity.desc&api_key=${ApiService.API_KEY}`);
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw Error(result.status_message);
+      }
+      return result;
+    } catch (e) {
+      console.error(e);
+      throw Error("Failed to fetch movie");
+    }
+  }
+
+  async getByGenres(ids: number[]): Promise<ISearchResult> {
+    try {
+      const response = await fetch(`${ApiService.BASE_URL}/discover/movie?with_genres=${ids.join(",")}&api_key=${ApiService.API_KEY}`);
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw Error(result.status_message);
+      }
+      return result;
+    } catch (e) {
+      console.error(e);
+      throw Error("Failed to fetch movie");
     }
   }
 }

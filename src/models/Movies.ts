@@ -1,5 +1,10 @@
-import { IMovie } from "./Movie";
+import { IAsset } from "./Asset";
 
 export interface IMovies {
-  onCinema: IMovie[];
+  onCinema: IAsset[];
+  popular: IAsset[];
+  popularSeries: IAsset[];
+  genres: {
+    [key: string]: IAsset[];
+  };
 }

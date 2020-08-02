@@ -5,26 +5,26 @@ import heartF from "@iconify/icons-jam/heart-f";
 import heart from "@iconify/icons-jam/heart";
 import classnames from "classnames";
 
-import { IMovie } from "../../models/Movie";
+import { IAsset } from "../../models/Asset";
 
 import "./style.css";
 
 export interface IProps {
-  movie: IMovie;
+  asset: IAsset;
   posterPath: string;
   isInWatchlist: boolean;
   onWatchlistClick: (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
 }
 
-const MovieCardView = ({ movie, posterPath, isInWatchlist, onWatchlistClick }: IProps) => (
-  <Link className="MovieCard" to={`/movie/${movie.id}`}>
+const MovieCardView = ({ asset, posterPath, isInWatchlist, onWatchlistClick }: IProps) => (
+  <Link className="MovieCard" to={`/${asset.isSeries ? "series" : "movie"}/${asset.id}`}>
     <div className="MovieCard__buttons">
       <span onClick={onWatchlistClick}>
         <Icon className={classnames("MovieCard__icon", { "MovieCard__icon--selected": isInWatchlist })} icon={isInWatchlist ? heartF : heart}></Icon>
       </span>
     </div>
-    <img className="MovieCard__img" alt={movie.title} src={posterPath} />
-    <div className="MovieCard__title">{movie.title}</div>
+    <img className="MovieCard__img" alt={asset.title} src={posterPath} />
+    <div className="MovieCard__title">{asset.title}</div>
   </Link>
 );
 
