@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ggg-movie-app/static/css/main.4b737479.chunk.css",
-    "main.js": "/ggg-movie-app/static/js/main.6ddc99b3.chunk.js",
-    "main.js.map": "/ggg-movie-app/static/js/main.6ddc99b3.chunk.js.map",
+    "main.js": "/ggg-movie-app/static/js/main.ef53c3cf.chunk.js",
+    "main.js.map": "/ggg-movie-app/static/js/main.ef53c3cf.chunk.js.map",
     "runtime-main.js": "/ggg-movie-app/static/js/runtime-main.49f3454c.js",
     "runtime-main.js.map": "/ggg-movie-app/static/js/runtime-main.49f3454c.js.map",
     "static/css/2.13749543.chunk.css": "/ggg-movie-app/static/css/2.13749543.chunk.css",
     "static/js/2.f2de997f.chunk.js": "/ggg-movie-app/static/js/2.f2de997f.chunk.js",
     "static/js/2.f2de997f.chunk.js.map": "/ggg-movie-app/static/js/2.f2de997f.chunk.js.map",
     "index.html": "/ggg-movie-app/index.html",
-    "precache-manifest.734e6b3934695e64733d15cc90d40b24.js": "/ggg-movie-app/precache-manifest.734e6b3934695e64733d15cc90d40b24.js",
+    "precache-manifest.afcb8478c5183d4123e65f89d8da6e46.js": "/ggg-movie-app/precache-manifest.afcb8478c5183d4123e65f89d8da6e46.js",
     "service-worker.js": "/ggg-movie-app/service-worker.js",
     "static/css/2.13749543.chunk.css.map": "/ggg-movie-app/static/css/2.13749543.chunk.css.map",
     "static/css/main.4b737479.chunk.css.map": "/ggg-movie-app/static/css/main.4b737479.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.13749543.chunk.css",
     "static/js/2.f2de997f.chunk.js",
     "static/css/main.4b737479.chunk.css",
-    "static/js/main.6ddc99b3.chunk.js"
+    "static/js/main.ef53c3cf.chunk.js"
   ]
 }
