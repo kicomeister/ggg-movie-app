@@ -31,7 +31,7 @@ const PlayerView = ({ match }: RouteComponentProps<IRouteParams>) => {
     } else {
       asset.fetchMovie(id);
     }
-  }, [match.params, asset]);
+  }, [id, assetType, asset]);
 
   useEffect(() => {
     if (showClose) {

@@ -16,11 +16,19 @@ const Player = ({ url, poster }: IProps) => {
     let shakaPlayer: IShaka;
     if (video && video.current) {
       shakaPlayer = new Shaka({ url, video: video.current });
+
+      if (!document.fullscreenElement) {
+        video.current.requestFullscreen();
+      }
     }
 
     return function cleanup() {
       if (shakaPlayer) {
         shakaPlayer.deInitialize();
+
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        }
       }
     };
   }, [url, video]);
